@@ -1,42 +1,27 @@
-// Ini javascript External
-function validateForm() {
-  let nameInput = document.getElementById("name-input");
+document.addEventListener("DOMContentLoaded", function () {
+  let slides = document.querySelectorAll(".slides img");
+  let index = 0;
 
-  // Kondisi Validasinya
-  if (nameInput.value == "") {
-    alert("Nama tidak boleh kosong");
-  } else {
-    alert("Welcome " + nameInput.value);
-  }
-}
+  function showSlide() {
+    slides.forEach((slide, i) => {
+      slide.style.opacity = i === index ? "1" : "0";
+    });
 
-// For Index Identifier
-let indexBanner = 0;
-
-showBanner();
-
-function nextBanner() {
-  // Increment IndexBanner
-  indexBanner += 1;
-  showBanner();
-}
-
-function showBanner() {
-  let banner = document.getElementsByClassName("main-banner");
-
-  // Reset Condition
-  if (indexBanner > banner.length - 1) {
-    indexBanner = 0;
+    index = (index + 1) % slides.length;
   }
 
-  // Loop untuk hide semua
-  for (let i = 0; i < banner.length; i++) {
-    banner[i].style.display = "none";
-  }
+  setInterval(showSlide, 3000);
 
-  // Show Banner
-  banner[indexBanner].style.display = "block";
-}
+  window.validasiForm = function () {
+    let nama = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let destinasi = document.getElementById("destination").value;
 
-// Auto Play
-setInterval(nextBanner, 3000);
+    if (!nama) return alert("Harap masukkan nama Anda.");
+    if (!email) return alert("Harap masukkan email yang valid.");
+    if (!destinasi) return alert("Harap pilih destinasi wisata.");
+
+    alert("Formulir berhasil dikirim!");
+    document.getElementById("contact-form").reset();
+  };
+});

@@ -1,75 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini project</title>
-
-    <!-- styles -->
+    <title>Wisata Mangga</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Header & Navigation -->
-    <header class="main-header">
-      <!-- Logo Company -->
-      <div class="logo-company"></div>
-
+    <!-- Header dan Navigasi -->
+    <header>
+      <div class="logo">
+        <h1>Wisata Mangga</h1>
+      </div>
       <nav>
-        <a href="#" class="no-border-radius-left">Home</a>
-        <a href="#our-package-section" class="border-radius">Our Packages</a>
-        <a href="#call-us-section" class="no-border-radius-right">Call Us</a>
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#package">Paket Wisata</a></li>
+          <li><a href="#contact">Hubungi Kami</a></li>
+        </ul>
       </nav>
     </header>
-    <hr />
-    <!-- Main Content -->
-    <main>
-      <header>
-        <h1>Your Trusted Travel Agent</h1>
-        <h4>Your Happiness is Our Happiness</h4>
-      </header>
 
-      <section class="main-content">
-        <!-- Banner Autoslide -->
-        <aside class="main-container">
-          <p>Banner Autoslide</p>
-        </aside>
+    <!-- Banner Auto Slide -->
+    <section id="home" class="banner">
+      <div class="slides">
+        <img src="images/pantai.jpg" alt="Pantai Balongan Indah" />
+        <img src="images/waduk.jpg" alt="Waduk Bojongsari" />
+        <img src="images/situ-bolang.jpg" alt="Situ Bolang" />
+      </div>
+    </section>
 
-        <!-- Form Contact Us -->
-        <aside class="main-container">
-          <p>Form Contact Us</p>
-        </aside>
-      </section>
+    <!-- Paket Wisata -->
+    <section id="package">
+      <h2>Paket Wisata Indramayu</h2>
+      <div class="packages">
+        <div class="package">
+          <img src="images/pantai.jpg" alt="Pantai Balongan Indah" />
+          <h3>Pantai Balongan Indah</h3>
+          <p>
+            Menikmati pemandangan sunset yang indah dengan pasir putih yang
+            bersih.
+          </p>
+        </div>
+        <div class="package">
+          <img src="images/waduk.jpg" alt="Waduk Bojongsari" />
+          <h3>Waduk Bojongsari</h3>
+          <p>Wisata air yang asri dengan perahu dan suasana sejuk.</p>
+        </div>
+        <div class="package">
+          <img src="images/situ-bolang.jpg" alt="Situ Bolang" />
+          <h3>Situ Bolang</h3>
+          <p>
+            Danau alami dengan udara segar dan spot foto yang instagramable.
+          </p>
+        </div>
+      </div>
+    </section>
 
-      <!-- Our Package Section -->
-      <section id="our-package-section">
-        <header>
-          <h2>Our Packages</h2>
-        </header>
+    <!-- Formulir Hubungi Kami -->
+    <section id="contact">
+      <h2>Hubungi Kami</h2>
+      <form id="contact-form">
+        <label for="name">Nama Anda</label>
+        <input type="text" id="name" placeholder="Nama Anda" />
 
-        <!-- content Our Packages -->
-        <article class="our-package-content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste magni minima earum iure cumque suscipit itaque. Officiis nobis minus error nemo neque, praesentium reiciendis illo perferendis ratione quos atque cum.
-            <5></5></p>
-        </article>
-      </section>
+        <label for="email">Alamat Email</label>
+        <input type="email" id="email" placeholder="contoh@email.com" />
 
-      <!-- Call Us Section -->
-       <section id="call-us-section">
-        <header>
-            <h2>Call Us</h2>
-        </header>
+        <label for="destination">Destinasi Wisata</label>
+        <select id="destination">
+          <option value="">Pilih Destinasi</option>
+          <option value="pantai">Pantai Balongan Indah</option>
+          <option value="waduk">Waduk Bojongsari</option>
+          <option value="situ">Situ Bolang</option>
+        </select>
 
-        <!-- Content Call Us Packages -->
-         <article class="call-us-section">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem libero consectetur accusamus exercitationem corporis eos ea corrupti molestiae enim consequuntur est recusandae assumenda, voluptas repudiandae odit tempora quasi repellendus in.
-            </p>
-         </article>
-       </section>
-    </main>
+        <input type="button" value="Kirim" onclick="validasiForm()" />
+      </form>
+    </section>
 
-    <!-- Footer -->
     <footer>
-        <p>Made by Carto@2025</p>
+      <div class="footer-container">
+        <p>&copy; 2025 Wisata Mangga.</p>
+        <div class="social-icons">
+          <a href="#"><img src="images/icons/facebook.svg" alt="Facebook" /></a>
+          <a href="#"
+            ><img src="images/icons/instagram.svg" alt="Instagram"
+          /></a>
+          <a href="#"><img src="images/icons/twitter.svg" alt="Twitter" /></a>
+        </div>
+      </div>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

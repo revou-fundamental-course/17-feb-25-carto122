@@ -1,121 +1,168 @@
-body {
-  font-family: fantasy;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.main-header {
+/* Header dan Navigasi */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo-company {
-  height: 50px;
-  width: 50px;
-  background-image: url(https://picsum.photos/300);
-  background-size: cover;
-  border-radius: 50%;
+/* Logo */
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
 }
 
-nav {
+/* Navigasi */
+nav ul {
+  list-style: none;
   display: flex;
+  gap: 20px;
 }
 
-nav > a {
-  border: 1px solid;
-  color: black;
+nav ul li {
+  padding: 8px 15px;
+  border: 2px solid #6eb7ff; /* Biru muda */
+  border-radius: 5px;
+}
+
+nav ul li a {
+  color: white;
   text-decoration: none;
-  padding: 8px;
-  border-radius: 4px;
+  font-weight: bold;
 }
 
-.no-border-radius {
-  border-radius: 0px;
+/* Banner */
+.banner {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
 }
 
-.no-border-radius-right {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border-bottom-left-radius: 4px;
+.slides img {
+  width: 100%;
+  height: 350px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.no-border-radius-left {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 0px;
-}
-
-main > header {
+/* Paket Wisata */
+#package {
   text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
 }
 
-.main-content {
+.packages {
   display: flex;
-  gap: 24px;
+  justify-content: center;
+  gap: 20px;
 }
 
-.main-container {
-  border: 1px solid;
-  height: 400px;
-  flex: 1;
-  align-content: center;
+.package {
+  width: 30%;
   text-align: center;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.main-banner {
-  height: 300px;
-  background-size: cover;
-  background-position: center;
+.package img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
 }
 
-.banner-img-1 {
-  background-image: url(https://picsum.photos/600);
-}
-
-.banner-img-2 {
-  background-image: url(https://picsum.photos/650);
-}
-
-.banner-img-3 {
-  background-image: url(https://picsum.photos/675);
-}
-
-#our-package-section > header {
-  height: 100px;
-  align-content: center;
+/* Formulir */
+#contact {
   text-align: center;
-  background-color: aliceblue;
+  padding: 40px;
 }
 
-.our-package-content {
-  border: 1px solid;
-  height: 300px;
-  align-content: center;
-  text-align: center;
+form {
+  max-width: 400px;
+  margin: auto;
 }
 
-#call-us-section > header {
-  height: 100px;
-  align-content: center;
-  text-align: center;
-  background-color: antiquewhite;
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
 }
 
-.call-us-content {
-  border: 1px solid;
-  height: 300px;
-  align-content: center;
-  text-align: center;
+input[type="button"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
 }
 
+/* Footer */
 footer {
+  background-color: #007bff;
+  color: white;
   text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
 }
 
-/* Responsive Design */
-@media only screen and (max-width: 480px) {
-  .main-content {
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-container p {
+  margin-bottom: 10px;
+}
+
+/* Ikon Media Sosial */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icons a img:hover {
+  transform: scale(1.2);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .packages {
     flex-direction: column;
+  }
+
+  .package {
+    width: 90%;
+    margin: auto;
   }
 }
